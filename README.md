@@ -26,7 +26,7 @@ Want access to Docker, so we can run Docker in the Jenkins container.
     RUN apt-get update  -qq \
         && apt-get install docker-ce=17.12.1~ce-0~debian -y
     RUN usermod -aG docker jenkins
-_Adapted from [source]()_
+_Adapted from [source](https://medium.com/@manav503/how-to-build-docker-images-inside-a-jenkins-container-d59944102f30)_
 
 #### Build the image
     docker image build -t jenkins-docker .
@@ -81,8 +81,9 @@ In the local project specified above there will be a **.git** folder containing 
 Create a new file called _post-commit_, and add your URL for triggering Jenkins, so that it looks like this:
 
     #!/bin/sh
-    curl http://localhost:8080/job/Apipeline/build?token=mytoken
+    curl http://localhost:8080/job/MyPipeline/build?token=mytoken
 
 Now a build should trigger in Jenkins everytime a commit is done.
+
 
 
