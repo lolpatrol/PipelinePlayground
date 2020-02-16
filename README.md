@@ -35,6 +35,8 @@ _Adapted from [source](https://medium.com/@manav503/how-to-build-docker-images-i
 
     docker container run -d -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v C:/"Path to some (local) repository":/var/projects jenkins-docker
 
+As you can see, I can point the mounted volume to the local repository only.
+
 ___
 
 ## Set up Jenkins
